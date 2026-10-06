@@ -1,28 +1,15 @@
 import { getImageProps } from "next/image";
-import { profile, projects, type Project } from "@/content/profile";
+import { projects, type Project } from "@/content/profile";
 import { Section } from "./Section";
 
 export function Projects() {
   return (
     <Section id="projects" title="Projects">
-      {projects.length === 0 ? (
-        <p className="max-w-[40rem] text-muted">
-          Project write-ups are on the way. In the meantime, my code is on{" "}
-          <a
-            href={profile.github}
-            className="font-semibold text-ink underline decoration-link decoration-2 underline-offset-[5px] transition-colors hover:text-link"
-          >
-            GitHub
-          </a>
-          .
-        </p>
-      ) : (
-        <ul className={`grid gap-x-10 gap-y-14 ${projects.length > 1 ? "sm:grid-cols-2" : "max-w-[40rem]"}`}>
-          {projects.map((project) => (
-            <ProjectEntry key={project.title} project={project} wide={projects.length === 1} />
-          ))}
-        </ul>
-      )}
+      <ul className={`grid gap-x-10 gap-y-14 ${projects.length > 1 ? "sm:grid-cols-2" : "max-w-[40rem]"}`}>
+        {projects.map((project) => (
+          <ProjectEntry key={project.title} project={project} wide={projects.length === 1} />
+        ))}
+      </ul>
     </Section>
   );
 }

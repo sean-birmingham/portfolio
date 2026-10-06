@@ -9,20 +9,11 @@ export function CopyEmailButton({ email }: { email: string }) {
   async function copy() {
     try {
       await navigator.clipboard.writeText(email);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Older browsers: fall back to a hidden textarea
-      const area = document.createElement("textarea");
-      area.value = email;
-      area.setAttribute("readonly", "");
-      area.style.position = "fixed";
-      area.style.opacity = "0";
-      document.body.appendChild(area);
-      area.select();
-      document.execCommand("copy");
-      area.remove();
+      // Clipboard access was blocked; the address is still on the page to copy by hand.
     }
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 2000);
   }
 
   return (

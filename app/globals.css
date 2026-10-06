@@ -64,13 +64,6 @@
   }
 }
 
-/*
-  Red and black option:
-    dark:  --accent #d7142b  --link #ff7a86  --glow rgb(215 20 43 / 0.28)
-    light: --accent #c8102e  --link #b00d28  --glow rgb(200 16 46 / 0.12)
-    footer (in @theme below): --color-night-link #ff7a86
-*/
-
 @theme inline {
   --font-sans: "Archivo Variable", ui-sans-serif, system-ui, sans-serif;
 

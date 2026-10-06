@@ -6,21 +6,16 @@ import { Experience } from "@/components/Experience";
 import { Hero } from "@/components/Hero";
 import { Projects } from "@/components/Projects";
 import { SiteHeader } from "@/components/SiteHeader";
-import { projects } from "@/content/profile";
 
 export default function Home() {
-  // Projects are the first thing reviewers look for, so they lead once there are some.
-  const hasProjects = projects.length > 0;
-
   return (
     <>
       <SiteHeader />
       <main>
         <Hero />
         <About />
-        {hasProjects && <Projects />}
+        <Projects />
         <Experience />
-        {!hasProjects && <Projects />}
         <Education />
         <Certifications />
       </main>

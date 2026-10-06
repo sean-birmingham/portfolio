@@ -1,12 +1,10 @@
-import { projects } from "@/content/profile";
 import { ThemeToggle } from "./ThemeToggle";
 
-// Same order as the page: Projects comes before Experience once there are projects.
-const experience = { href: "#experience", label: "Experience" };
-const work = { href: "#projects", label: "Projects" };
+// Same order as the sections on the page
 const links = [
   { href: "#about", label: "About", wideOnly: true },
-  ...(projects.length > 0 ? [work, experience] : [experience, work]),
+  { href: "#projects", label: "Projects" },
+  { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
 

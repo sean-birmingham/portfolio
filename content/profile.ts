@@ -12,8 +12,6 @@ export const profile = {
   photo: "/sean-birmingham.jpg",
   github: "https://github.com/sean-birmingham",
   linkedin: "https://www.linkedin.com/in/sean-birmingham",
-  // Résumé PDF in /public, linked from the hero. Set to null to hide the button.
-  resume: null as string | null,
   // Shown above your name with a status dot. Set to null to hide it.
   availability: "Open to front-end and full-stack roles" as string | null,
   intro: "I build responsive web interfaces with React and Next.js, backed by full-stack training in Node.js, Express, and SQL.",
@@ -21,14 +19,13 @@ export const profile = {
     "I care most about the part of an application people actually touch: interfaces that feel effortless on any screen, built with clean, maintainable code the next developer can pick up without a tour. As a team lead at Bloom Institute of Technology, I mentored newer developers and ran the stand-ups and code reviews that kept the team moving.",
 };
 
-/** Your tech, front end first. Builds the "Tech I use" list in About. */
-export const stack = [
-  { layer: "Front end", tools: ["React", "Next.js", "Redux Toolkit", "Context API", "React Native", "Tailwind CSS"] },
-  { layer: "Back end and data", tools: ["Node.js", "Express", "REST APIs", "Python", "SQL", "PostgreSQL", "MongoDB", "JSON"] },
-  { layer: "Testing and tooling", tools: ["Jest", "Cypress", "Git", "Docker", "CI/CD"] },
+/** The "Tech I use" list in About, front end first. */
+export const tech = [
+  "JavaScript", "HTML", "CSS", "Sass/Less",
+  "React", "Next.js", "Redux Toolkit", "Context API", "React Native", "Tailwind CSS",
+  "Node.js", "Express", "REST APIs", "Python", "SQL", "PostgreSQL", "MongoDB", "JSON",
+  "Jest", "Cypress", "Git", "Docker", "CI/CD",
 ];
-
-export const languages = ["JavaScript", "HTML", "CSS", "Sass/Less"];
 
 /** Most recent first. */
 export const experience = [
@@ -80,7 +77,7 @@ export const education = [
   },
 ];
 
-export type Certification = {
+type Certification = {
   name: string;
   issuer: string;
   year: string;

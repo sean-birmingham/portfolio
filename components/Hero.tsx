@@ -33,28 +33,12 @@ export function Hero() {
         <p className="mt-4 max-w-[36rem] text-muted sm:text-lg">{profile.intro}</p>
 
         <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
-          <div className="flex flex-wrap gap-3">
-            <a
-              href={`mailto:${profile.email}`}
-              className="rounded-full bg-accent px-6 py-3 font-semibold text-accent-ink shadow-[0_0_0_1px_rgb(255_255_255/0.08),0_8px_30px_-8px_var(--accent)] transition-transform hover:-translate-y-0.5"
-            >
-              Email me
-            </a>
-            {profile.resume && (
-              <a
-                href={profile.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-rule bg-surface/70 px-6 py-3 font-semibold backdrop-blur-sm transition-colors hover:border-link hover:text-link"
-              >
-                Résumé
-                <svg viewBox="0 0 20 20" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M10 3v10M6 9l4 4 4-4M4 16h12" />
-                </svg>
-                <span className="sr-only">(PDF, opens in a new tab)</span>
-              </a>
-            )}
-          </div>
+          <a
+            href={`mailto:${profile.email}`}
+            className="rounded-full bg-accent px-6 py-3 font-semibold text-accent-ink shadow-[0_0_0_1px_rgb(255_255_255/0.08),0_8px_30px_-8px_var(--accent)] transition-transform hover:-translate-y-0.5"
+          >
+            Email me
+          </a>
           <div className="flex gap-6">
             <a href={profile.github} className={textLink}>
               GitHub
