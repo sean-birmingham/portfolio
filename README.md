@@ -22,7 +22,7 @@ This is my personal portfolio: one page that introduces me, shows what I've buil
 ### What's on it
 
 - **Intro**: who I am, my availability, and quick links to email me or find me on GitHub and LinkedIn
-- **About**: my photo, a short bio, and the tools I work with
+- **About**: my photo, a short bio, what I'm into outside of code, and the tools I work with
 - **Projects**: what I've built, starting with [Filmpire](https://filmpire-sbirmingham.netlify.app/), a movie discovery app, shown with its own screenshot for phone, tablet, and desktop
 - **Experience, Education, and Certifications**: each certificate links to the original
 - **Contact**: a message form that goes straight to my inbox, plus my email with a one-click copy button

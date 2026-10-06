@@ -18,6 +18,16 @@ export function About() {
   return (
     <Section id="about" title="About" aside={<Portrait />}>
       <p className="max-w-[40rem]">{profile.about}</p>
+      <p className="mt-4 max-w-[40rem]">
+        {profile.hobbies.text}{" "}
+        <a
+          href={profile.hobbies.link.href}
+          className="font-semibold underline decoration-link decoration-2 underline-offset-[5px] transition-colors hover:text-link"
+        >
+          {profile.hobbies.link.label}
+        </a>
+        .
+      </p>
 
       <h3 className="mt-10 font-stretch-semi-expanded text-base font-bold">Tech I use</h3>
       <ul className="mt-4 flex max-w-[40rem] flex-wrap gap-2">

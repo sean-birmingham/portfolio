@@ -17,6 +17,11 @@ export const profile = {
   intro: "I build responsive web interfaces with React and Next.js, backed by full-stack training in Node.js, Express, and SQL.",
   about:
     "I care most about the part of an application people actually touch: interfaces that feel effortless on any screen, built with clean, maintainable code the next developer can pick up without a tour. As a team lead at Bloom Institute of Technology, I mentored newer developers and ran the stand-ups and code reviews that kept the team moving.",
+  // Second paragraph in About, ending with a link
+  hobbies: {
+    text: "Outside of code, you'll usually find me gaming, playing guitar or bass, or spending time with friends and family. Every once in a while I stream on",
+    link: { label: "Twitch", href: "https://www.twitch.tv/iamthehydra98" },
+  },
 };
 
 /** The "Tech I use" list in About, front end first. */
