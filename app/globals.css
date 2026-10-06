@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/*
+  Palette: black and electric blue.
+  Want red and black instead? Swap the values marked "accent" in both
+  themes for the red set in the comment at the bottom of this block.
+*/
+
+/* Dark theme (default) */
+:root,
+[data-theme="dark"] {
+  --bg: #05070b;
+  --surface: #0c111a;
+  --ink: #eef2f8;
+  --muted: #8d97a8;
+  --rule: #1a2130;
+
+  --accent: #2459f0; /* accent: buttons */
+  --accent-ink: #ffffff;
+  --link: #78a2ff; /* accent: links and highlights */
+
+  /* Hero backdrop */
+  --grid-dot: rgb(140 165 230 / 0.22);
+  --glow: rgb(36 89 240 / 0.28); /* accent */
+  --available: #34d399;
+
+  color-scheme: dark;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --bg: #f3f5f9;
+  --surface: #ffffff;
+  --ink: #06080d;
+  --muted: #4a5466;
+  --rule: #d7dce5;
+
+  --accent: #2459f0; /* accent */
+  --accent-ink: #ffffff;
+  --link: #1d4ed8; /* accent */
+
+  --grid-dot: rgb(20 35 70 / 0.16);
+  --glow: rgb(36 89 240 / 0.14); /* accent */
+  --available: #059669;
+
+  color-scheme: light;
+}
+
+/* Before the theme script runs (or with JavaScript off), follow the system setting. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg: #f3f5f9;
+    --surface: #ffffff;
+    --ink: #06080d;
+    --muted: #4a5466;
+    --rule: #d7dce5;
+    --link: #1d4ed8;
+    --grid-dot: rgb(20 35 70 / 0.16);
+    --glow: rgb(36 89 240 / 0.14);
+    --available: #059669;
+    color-scheme: light;
+  }
+}
+
+/*
+  Red and black option:
+    dark:  --accent #d7142b  --link #ff7a86  --glow rgb(215 20 43 / 0.28)
+    light: --accent #c8102e  --link #b00d28  --glow rgb(200 16 46 / 0.12)
+    footer (in @theme below): --color-night-link #ff7a86
+*/
+
+@theme inline {
+  --font-sans: "Archivo Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-link: var(--link);
+  --color-available: var(--available);
+}
+
+@theme {
+  /* The footer is dark in both themes */
+  --color-night: #05070b;
+  --color-night-ink: #eef2f8;
+  --color-night-muted: #9aa4b5;
+  --color-night-link: #78a2ff;
+}
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Theme toggle shows the icon for the mode you'd switch to */
+.theme-icon-sun,
+.theme-icon-moon {
+  display: none;
+}
+:root:not([data-theme="light"]) .theme-icon-sun {
+  display: block;
+}
+[data-theme="light"] .theme-icon-moon {
+  display: block;
+}
+
+/* Hero backdrop: a dot grid that fades out from a soft glow behind the hero */
+.hero-backdrop {
+  background-image:
+    radial-gradient(42rem 30rem at 72% 28%, var(--glow), transparent 70%),
+    radial-gradient(circle at 1px 1px, var(--grid-dot) 1px, transparent 0);
+  background-size: 100% 100%, 26px 26px;
+  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 60% 30%, #000 35%, transparent 80%);
+  mask-image: radial-gradient(ellipse 85% 85% at 60% 30%, #000 35%, transparent 80%);
+}
