@@ -14,7 +14,8 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/sean-birmingham",
   // Shown above your name with a status dot. Set to null to hide it.
   availability: "Open to front-end and full-stack roles" as string | null,
-  intro: "I build responsive web interfaces with React and Next.js, backed by full-stack training in Node.js, Express, and SQL.",
+  intro:
+    "I build responsive web interfaces with React and Next.js, backed by full-stack training in Node.js, Express, and SQL.",
   about:
     "I care most about the part of an application people actually touch: interfaces that feel effortless on any screen, built with clean, maintainable code the next developer can pick up without a tour. As a team lead at Bloom Institute of Technology, I mentored newer developers and ran the stand-ups and code reviews that kept the team moving.",
   // Second paragraph in About, ending with a link
@@ -26,10 +27,29 @@ export const profile = {
 
 /** The "Tech I use" list in About, front end first. */
 export const tech = [
-  "JavaScript", "HTML", "CSS", "Sass/Less",
-  "React", "Next.js", "Redux Toolkit", "Context API", "React Native", "Tailwind CSS",
-  "Node.js", "Express", "REST APIs", "Python", "SQL", "PostgreSQL", "MongoDB", "JSON",
-  "Jest", "Cypress", "Git", "Docker", "CI/CD",
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "Sass/Less",
+  "React",
+  "Next.js",
+  "Redux Toolkit",
+  "Context API",
+  "React Native",
+  "Tailwind CSS",
+  "Node.js",
+  "Express",
+  "REST APIs",
+  "Python",
+  "SQL",
+  "PostgreSQL",
+  "MongoDB",
+  "JSON",
+  "Jest",
+  "Cypress",
+  "Git",
+  "Docker",
+  "CI/CD",
 ];
 
 /** Most recent first. */
@@ -149,10 +169,30 @@ export type Project = {
  */
 export const projects: Project[] = [
   {
+    title: "Crate",
+    description:
+      "A record-shop take on a Spotify-style music player. Browse albums listed by side like the back of a sleeve, search artists, songs, and genres, and build playlists. A single audio element owned by a React context keeps the music playing as you move between pages, the Now Playing screen spins the record on a turntable, and uploads fill in their title, artist, and cover art from the file's tags. The online demo is read-only; likes, playlists, and uploads work when you run it locally.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Server Actions"],
+    liveUrl: "https://crate-red-two.vercel.app",
+    repoUrl: "https://github.com/sean-birmingham/crate",
+    credit: "Built with Claude as a coding guide",
+    screenshots: {
+      desktop: "/projects/crate-desktop.jpg",
+      tablet: "/projects/crate-tablet.jpg",
+      mobile: "/projects/crate-mobile.jpg",
+    },
+  },
+  {
     title: "Filmpire",
     description:
       "A movie discovery app built on The Movie Database API. Browse popular, top-rated, and upcoming films or filter by genre, search any title, and open a movie to see its trailer, cast, and recommendations. Sign in with a TMDB account to save favorites and a watchlist, switch between light and dark mode, or get around hands-free with an AI voice assistant.",
-    tech: ["React", "Redux Toolkit (RTK Query)", "Material UI", "TMDB API", "Alan AI"],
+    tech: [
+      "React",
+      "Redux Toolkit (RTK Query)",
+      "Material UI",
+      "TMDB API",
+      "Alan AI",
+    ],
     liveUrl: "https://filmpire-sbirmingham.netlify.app/",
     repoUrl: "https://github.com/sean-birmingham/filmpire_sb",
     credit: "Built by following a JavaScript Mastery course",
