@@ -1,16 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 /** Copies the email address, for visitors whose computer has no mail app set up. */
 export function CopyEmailButton({ email }: { email: string }) {
   const [copied, setCopied] = useState(false);
+  const resetTimer = useRef<number | undefined>(undefined);
 
   async function copy() {
     try {
       await navigator.clipboard.writeText(email);
       setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
+      // Restart the countdown so repeat clicks keep "Copied" up for the full 2 seconds
+      window.clearTimeout(resetTimer.current);
+      resetTimer.current = window.setTimeout(() => setCopied(false), 2000);
     } catch {
       // Clipboard access was blocked; the address is still on the page to copy by hand.
     }

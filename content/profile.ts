@@ -134,8 +134,8 @@ export type Project = {
 };
 
 /**
- * Add your best 3 to 5 projects here. Once this list has entries, the
- * Projects section moves up to sit right after About, ahead of Experience.
+ * Add your best 3 to 5 projects here. One project gets a single wide
+ * column; two or more sit side by side in a grid.
  *
  * Example:
  * {

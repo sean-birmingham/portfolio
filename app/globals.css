@@ -2,11 +2,7 @@
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/*
-  Palette: black and electric blue.
-  Want red and black instead? Swap the values marked "accent" in both
-  themes for the red set in the comment at the bottom of this block.
-*/
+/* Palette: black and electric blue. Values marked "accent" carry the brand color. */
 
 /* Dark theme (default) */
 :root,
@@ -86,36 +82,39 @@
   --color-night-link: #78a2ff;
 }
 
-html {
-  background: var(--bg);
-  color: var(--ink);
-  -webkit-text-size-adjust: 100%;
-}
-
-@media (prefers-reduced-motion: no-preference) {
+/* In the base layer so Tailwind classes (rounded-full, focus:outline-none) can override these */
+@layer base {
   html {
-    scroll-behavior: smooth;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-text-size-adjust: 100%;
   }
-}
 
-body {
-  font-family: var(--font-sans);
-  font-size: 1.0625rem;
-  line-height: 1.65;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  transition: background-color 200ms ease, color 200ms ease;
-}
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
 
-:focus-visible {
-  outline: 2px solid var(--link);
-  outline-offset: 3px;
-  border-radius: 3px;
-}
+  body {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
 
-::selection {
-  background: var(--accent);
-  color: #ffffff;
+  :focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #ffffff;
+  }
 }
 
 /* Theme toggle shows the icon for the mode you'd switch to */
